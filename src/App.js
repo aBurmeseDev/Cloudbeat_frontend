@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Login from "./Components/Login/Login";
 
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 
 import AppNavbar from "./Components/AppNavbar/AppNavbar";
 import * as routes from "./Components/constants/routes";
@@ -18,16 +18,35 @@ class App extends Component {
     this.setState({
       currentUser: user
     });
+  doLogoutCurrentUser = () => {
+    this.setState({
+      currentUser: null
+    });
+    this.props.history.push(routes.LOGIN);
+  };
 
   render() {
+    const { currentUser } = this.state;
     return (
       <div className="nav">
-        <AppNavbar currentUser={this.state.currentUser} />
+        <AppNavbar
+          currentUser={this.state.currentUser}
+          doLogoutCurrentUser={this.doLogoutCurrentUser}
+        />
         <Switch>
-          <Route exact path={routes.ROOT} render={() => <div>ROOT</div>} />
-          <Route exact path={routes.HOME} render={() => <div>HOME</div>} />
-          <Route exact path={routes.REGISTER} render={() => <Register />} />
+          <Route exact path={routes.ROOT} />
+          <Route
+            exact
+            path={routes.REGISTER}
+            render={() => (
+              <Register
+                currentUser={currentUser}
+                doSetCurrentUser={this.doSetCurrentUser}
+              />
+            )}
+          />
           <Route exact path={routes.POSTS} render={() => <Post />} />
+
           <Route
             exact
             path={routes.LOGIN}
@@ -47,4 +66,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

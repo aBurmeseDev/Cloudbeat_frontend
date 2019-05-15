@@ -1,40 +1,27 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+import "./AppNavbar.css";
+
 import * as routes from "../constants/routes";
 
-const NavBar = ({ currentUser }) => (
-  <div>
-    <h5>NAVBAR</h5>
-    <NavLink
-      exact
-      className="navLink"
-      activeClassName="selected"
-      to={routes.ROOT}
-    >
-      ROOT
-    </NavLink>
-    <NavLink to={routes.HOME} className="navLink" activeClassName="selected">
-      HOME{" "}
-    </NavLink>
+const NavBar = ({ currentUser, doLogoutCurrentUser }) => (
+  <div className="navDiv">
     <NavLink to={routes.USERS} className="navLink" activeClassName="selected">
-      USERS{" "}
+      USERS
     </NavLink>
-    <NavLink to={routes.POSTS} className="navLink" activeClassName="selected">
-      POSTS{" "}
-    </NavLink>
-    <NavLink to={routes.SEARCH} className="navLink" activeClassName="selected">
-      SEARCH
-    </NavLink>
-    <NavLink to={routes.SIGNUP} className="navLink" activeClassName="selected">
-      SIGNUP
-    </NavLink>
-
     {currentUser ? (
-      <span>hello {currentUser.username}</span>
+      <NavLink onClick={doLogoutCurrentUser} className="navLink">
+        LOGOUT
+      </NavLink>
     ) : (
       [
-        <NavLink key={1} to={routes.REGISTER} activeClassName="selected">
+        <NavLink
+          key={1}
+          to={routes.REGISTER}
+          activeClassName="selected"
+          className="navLink"
+        >
           REGISTER
         </NavLink>,
         <NavLink
@@ -47,6 +34,9 @@ const NavBar = ({ currentUser }) => (
         </NavLink>
       ]
     )}
+    <NavLink to={routes.POSTS} className="navLink" activeClassName="selected">
+      SEARCH
+    </NavLink>
   </div>
 );
 

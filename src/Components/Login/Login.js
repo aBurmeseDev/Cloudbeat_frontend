@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { withRouter } from "react-router-dom";
+
 class Login extends Component {
   constructor() {
     super();
@@ -13,32 +15,25 @@ class Login extends Component {
   };
   handleSubmit = async e => {
     e.preventDefault();
-    try {
-      const loginResponse = await fetch("/users/login", {
-        method: "POST",
-        credentials: "include", // on every single request we have to send the cookie
-        body: JSON.stringify(this.state),
-        headers: {
-          "Content-Type": "application/json"
-        }
-      });
-      const parsedResponse = await loginResponse.json();
-      console.log(parsedResponse);
-      if (parsedResponse.success) {
-        // this is how we programatically change routes in a component
-        // that is rendered by a route component check the app.js to see the login
-        // its inside a route
-        this.props.props.history.push("/");
-        console.log("pushed");
+    const loginResponse = await fetch("/users/login", {
+      method: "POST",
+      credentials: "include",
+      body: JSON.stringify(this.state),
+      headers: {
+        "Content-type": "application/json"
       }
-    } catch (err) {
-      console.log(err);
+    });
+
+    const parsedResponse = await loginResponse.json();
+    if (parsedResponse.user) {
+      this.props.doSetCurrentUser(parsedResponse.user);
+      this.props.history.push("/searchsongs");
     }
   };
   render() {
     console.log(this.state);
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="loginForm">
         <label htmlFor="username">username</label>
         <input type="text" name="username" onChange={this.handleChange} />
         <label htmlFor="password">password</label>
@@ -49,4 +44,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);

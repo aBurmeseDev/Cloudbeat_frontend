@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+import * as routes from "../constants/routes";
 
 class Register extends Component {
   state = {
@@ -24,6 +25,7 @@ class Register extends Component {
       const parsedResponse = await registerResponse.json();
       console.log(parsedResponse);
       if (parsedResponse.user) {
+        console.log(parsedResponse);
         this.props.doSetCurrentUser(parsedResponse.user);
         this.setState({
           logged: true
@@ -37,32 +39,34 @@ class Register extends Component {
     const { username, password } = this.state;
     return (
       <div>
-        this.state.logged ?{" "}
-        <Redirect to={`/users/${this.props.currentUser._id}`} /> :
-        <RegisterForm
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-          username={username}
-          password={password}
-        />
+        {this.state.logged ? (
+          <Redirect to={routes.SEARCH} />
+        ) : (
+          <RegisterForm
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+            username={username}
+            password={password}
+          />
+        )}
       </div>
     );
   }
 }
 const RegisterForm = ({ handleChange, handleSubmit, username, password }) => (
-  <form onSubmit={e => this.onSubmit}>
+  <form onSubmit={e => handleSubmit(e)}>
     <label htmlFor="username">username</label>
     <input
       type="text"
       name="username"
-      onChange={e => this.handleChange(e)}
+      onChange={e => handleChange(e)}
       value={username}
     />
     <label htmlFor="password">password</label>
     <input
       type="password"
       name="password"
-      onChange={e => this.handleChange(e)}
+      onChange={e => handleChange(e)}
       value={password}
     />
     <button type="submit">submit</button>

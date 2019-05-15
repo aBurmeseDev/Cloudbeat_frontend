@@ -19,10 +19,12 @@ class Search extends Component {
           value={this.state.query}
           onChange={this.changeHandler}
         />
+        <br />
         <button
           onClick={() => {
             this.props.search(this.state.query);
           }}
+          class="btn waves-effect waves-light"
         >
           Search
         </button>

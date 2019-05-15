@@ -8,7 +8,8 @@ import AppNavbar from "./Components/AppNavbar/AppNavbar";
 import * as routes from "./Components/constants/routes";
 import Post from "./Components/Post/Post.js";
 import Register from "./Components/Register/Register";
-
+import "./App.css";
+import "materialize-css/dist/css/materialize.min.css";
 class App extends Component {
   state = {
     currentUser: null

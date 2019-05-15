@@ -35,10 +35,18 @@ class Login extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="loginForm">
         <label htmlFor="username">username</label>
-        <input type="text" name="username" onChange={this.handleChange} />
+        <input
+          type="text"
+          name="username"
+          autoComplete="off"
+          onChange={this.handleChange}
+        />
         <label htmlFor="password">password</label>
         <input type="text" name="password" onChange={this.handleChange} />
-        <button type="submit">Login</button>
+        <br />
+        <button type="submit" class="btn waves-effect waves-light">
+          Login
+        </button>
       </form>
     );
   }

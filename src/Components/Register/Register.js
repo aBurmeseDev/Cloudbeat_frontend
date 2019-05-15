@@ -61,6 +61,7 @@ const RegisterForm = ({ handleChange, handleSubmit, username, password }) => (
       name="username"
       onChange={e => handleChange(e)}
       value={username}
+      autoComplete="off"
     />
     <label htmlFor="password">password</label>
     <input
@@ -68,8 +69,11 @@ const RegisterForm = ({ handleChange, handleSubmit, username, password }) => (
       name="password"
       onChange={e => handleChange(e)}
       value={password}
-    />
-    <button type="submit">submit</button>
+    />{" "}
+    <br />
+    <button type="submit" class="btn waves-effect waves-light">
+      register
+    </button>
   </form>
 );
 

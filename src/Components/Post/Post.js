@@ -20,7 +20,7 @@ class Post extends Component {
   render() {
     return (
       <div>
-        <h1>Search songs</h1>
+        <h4>search songs</h4>
         <Search search={this.songHandler} />
         <ShowSongs tracks={this.state.search} />
       </div>

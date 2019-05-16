@@ -34,6 +34,7 @@ const SongsList = props => {
             allow="encrypted-media"
             style={{ paddingTop: "1rem" }}
           />
+          <button>Add</button>
         </div>
       ))}
     </div>

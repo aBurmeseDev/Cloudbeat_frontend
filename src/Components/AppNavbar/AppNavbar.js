@@ -8,7 +8,7 @@ import * as routes from "../constants/routes";
 const NavBar = ({ currentUser, doLogoutCurrentUser }) => (
   <div className="navDiv">
     <NavLink to={routes.USERS} className="navLink" activeClassName="selected">
-      USERS
+      USERS DASHBOARD
     </NavLink>
     <NavLink to={routes.POSTS} className="navLink" activeClassName="selected">
       SEARCH

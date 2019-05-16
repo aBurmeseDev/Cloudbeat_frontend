@@ -26,7 +26,7 @@ class Register extends Component {
       console.log(parsedResponse);
       if (parsedResponse.user) {
         console.log(parsedResponse);
-        this.props.doSetCurrentUser(parsedResponse.user);
+        // this.props.doSetCurrentUser(parsedResponse.user);
         this.setState({
           logged: true
         });

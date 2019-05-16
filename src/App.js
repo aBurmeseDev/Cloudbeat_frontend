@@ -85,7 +85,7 @@ class App extends Component {
 
           <Route render={() => <div>NOT FOUND</div>} />
         </Switch>
-        <Particles params={particleOption} />
+        <Particles params={particleOption} className="particles" />
       </div>
     );
   }

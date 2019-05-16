@@ -25,3 +25,8 @@ button {
 
   margin: auto !important;
 }
+.particles {
+  z-index: -10;
+  top: 0;
+  left: 0;
+}

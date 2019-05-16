@@ -1,5 +1,4 @@
 export const ROOT = "/";
-
 export const POSTS = "/searchsongs";
 export const USERS = "/users";
 export const REGISTER = "/register";

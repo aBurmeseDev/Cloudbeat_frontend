@@ -1,15 +1,29 @@
 import React, { Component } from "react";
 
-import Login from "./Components/Login/Login";
-
 import { Switch, Route, withRouter } from "react-router-dom";
-
 import AppNavbar from "./Components/AppNavbar/AppNavbar";
 import * as routes from "./Components/constants/routes";
-import Post from "./Components/Post/Post.js";
+import Search from "./Components/FetchData/FetchData";
+import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
+import Home from "./Components/Home/Root";
 import "./App.css";
 import "materialize-css/dist/css/materialize.min.css";
+import Particles from "react-particles-js";
+import User from "./Components/Users/Users";
+
+const particleOption = {
+  particles: {
+    number: {
+      value: 200,
+      density: {
+        enable: true,
+        value_area: 1000
+      }
+    }
+  }
+};
+
 class App extends Component {
   state = {
     currentUser: null
@@ -35,7 +49,7 @@ class App extends Component {
           doLogoutCurrentUser={this.doLogoutCurrentUser}
         />
         <Switch>
-          <Route exact path={routes.ROOT} />
+          <Route exact path={routes.ROOT} render={() => <Home />} />
           <Route
             exact
             path={routes.REGISTER}
@@ -46,7 +60,16 @@ class App extends Component {
               />
             )}
           />
-          <Route exact path={routes.POSTS} render={() => <Post />} />
+          <Route
+            exact
+            path={routes.SEARCH}
+            render={() => <Search currentUser={this.state.currentUser} />}
+          />
+          <Route
+            exact
+            path={routes.USERS}
+            render={() => <User currentUser={this.state.currentUser} />}
+          />
 
           <Route
             exact
@@ -62,6 +85,7 @@ class App extends Component {
 
           <Route render={() => <div>NOT FOUND</div>} />
         </Switch>
+        <Particles params={particleOption} />
       </div>
     );
   }

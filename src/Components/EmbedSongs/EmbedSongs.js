@@ -10,18 +10,29 @@ const SongsList = props => {
   };
   console.log(props);
   return (
-    <div className="App-header">
+    <div>
       {(props.tracks || []).map(t => (
-        <div style={{ display: "inline-block" }}>
-          {t.name} - {t.artists[0].name} <br />
+        <div style={{ display: "inline-block", padding: "1rem" }}>
+          <span
+            style={{
+              textAlign: "center",
+              color: "#fffff",
+              marginBottom: "2rem"
+            }}
+          >
+            {t.album.release_date} <br />
+            Popularity:{t.popularity}
+          </span>
+          <br />
           <iframe
             title={t.name}
             src={embedHandler(t.external_urls.spotify)}
             width="300"
             height="380"
-            frameborder="0"
+            frameBorder="0"
             allowtransparency="true"
             allow="encrypted-media"
+            style={{ paddingTop: "1rem" }}
           />
         </div>
       ))}

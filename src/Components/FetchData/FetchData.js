@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Search from "../Search/Search";
-import ShowSongs from "../ShowSongs/Showsongs";
+import SearchBar from "../SearchBar/SearchBar";
+import EmbededSongs from "../EmbedSongs/EmbedSongs";
 
-class Post extends Component {
+class FetchData extends Component {
   state = {
     search: []
   };
@@ -19,13 +19,13 @@ class Post extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ marginTop: "7rem" }}>
         <h4>search songs</h4>
-        <Search search={this.songHandler} />
-        <ShowSongs tracks={this.state.search} />
+        <SearchBar search={this.songHandler} />
+        <EmbededSongs tracks={this.state.search} />
       </div>
     );
   }
 }
 
-export default Post;
+export default FetchData;

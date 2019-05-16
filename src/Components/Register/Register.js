@@ -16,7 +16,7 @@ class Register extends Component {
     try {
       const registerResponse = await fetch("/users", {
         method: "POST",
-        credentials: "include", // on every single request we have to send the cookie
+        credentials: "include",
         body: JSON.stringify(this.state),
         headers: {
           "Content-Type": "application/json"
@@ -55,7 +55,9 @@ class Register extends Component {
 }
 const RegisterForm = ({ handleChange, handleSubmit, username, password }) => (
   <form onSubmit={e => handleSubmit(e)}>
-    <label htmlFor="username">username</label>
+    <label htmlFor="username" style={{ color: "rgb(9, 93, 172)" }}>
+      username
+    </label>
     <input
       type="text"
       name="username"
@@ -63,15 +65,18 @@ const RegisterForm = ({ handleChange, handleSubmit, username, password }) => (
       value={username}
       autoComplete="off"
     />
-    <label htmlFor="password">password</label>
+    <label htmlFor="password" style={{ color: "rgb(9, 93, 172)" }}>
+      password
+    </label>
     <input
       type="password"
       name="password"
       onChange={e => handleChange(e)}
       value={password}
+      autoComplete="off"
     />{" "}
     <br />
-    <button type="submit" class="btn waves-effect waves-light">
+    <button type="submit" className="btn waves-effect waves-light">
       register
     </button>
   </form>

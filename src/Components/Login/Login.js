@@ -34,17 +34,26 @@ class Login extends Component {
     console.log(this.state);
     return (
       <form onSubmit={this.handleSubmit} className="loginForm">
-        <label htmlFor="username">username</label>
+        <label htmlFor="username" style={{ color: "rgb(9, 93, 172)" }}>
+          username
+        </label>
         <input
           type="text"
           name="username"
           autoComplete="off"
           onChange={this.handleChange}
         />
-        <label htmlFor="password">password</label>
-        <input type="text" name="password" onChange={this.handleChange} />
+        <label htmlFor="password" style={{ color: "rgb(9, 93, 172)" }}>
+          password
+        </label>
+        <input
+          type="password"
+          name="password"
+          onChange={this.handleChange}
+          autoComplete="off"
+        />
         <br />
-        <button type="submit" class="btn waves-effect waves-light">
+        <button type="submit" className="btn waves-effect waves-light">
           Login
         </button>
       </form>

@@ -10,25 +10,32 @@ class Search extends Component {
     });
   };
 
+  submitHandler = e => {
+    e.preventDefault();
+    this.props.search(this.state.query);
+  };
+
   render() {
     return (
       <div>
-        <input
-          type="text"
-          name="query"
-          value={this.state.query}
-          onChange={this.changeHandler}
-          autoComplete="off"
-        />
-        <br />
-        <button
-          onClick={() => {
-            this.props.search(this.state.query);
-          }}
-          className="btn waves-effect waves-light"
-        >
-          Search
-        </button>
+        <form onSubmit={this.submitHandler}>
+          <input
+            type="text"
+            name="query"
+            value={this.state.query}
+            onChange={this.changeHandler}
+            autoComplete="off"
+          />
+          <br />
+          <button
+            onClick={() => {
+              this.props.search(this.state.query);
+            }}
+            className="btn waves-effect waves-light"
+          >
+            Search
+          </button>
+        </form>
       </div>
     );
   }

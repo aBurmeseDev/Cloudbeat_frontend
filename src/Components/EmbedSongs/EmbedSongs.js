@@ -8,6 +8,7 @@ const SongsList = props => {
     let embedString = `https://open.spotify.com/embed/track/${array[1]}`;
     return embedString;
   };
+
   console.log(props);
   return (
     <div>

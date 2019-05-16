@@ -18,9 +18,20 @@ class Users extends Component {
     console.log(data.users && data.users);
 
     return (
-      <div>
+      <div style={{ marginTop: "4rem" }}>
         {data.users &&
-          data.users.map((user, i) => <h1 key={i}>{user.username}</h1>)}
+          data.users.map((user, i) => (
+            <h5
+              key={i}
+              style={{
+                display: "inline-block",
+                paddingLeft: "3rem"
+              }}
+            >
+              {" "}
+              <i class="fas fa-headphones-alt" />: {user.username}
+            </h5>
+          ))}
       </div>
     );
   }

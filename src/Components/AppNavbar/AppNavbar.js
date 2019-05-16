@@ -13,6 +13,7 @@ const NavBar = ({ currentUser, doLogoutCurrentUser }) => (
     <NavLink to={routes.POSTS} className="navLink" activeClassName="selected">
       SEARCH
     </NavLink>
+
     {currentUser ? (
       <NavLink onClick={doLogoutCurrentUser} className="navLink">
         LOGOUT

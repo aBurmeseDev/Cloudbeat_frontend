@@ -1,7 +1,19 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import * as routes from "../constants/routes";
+import Particles from "react-particles-js";
 
+const particleOption = {
+  particles: {
+    number: {
+      value: 200,
+      density: {
+        enable: true,
+        value_area: 1000
+      }
+    }
+  }
+};
 class Register extends Component {
   state = {
     username: "",
@@ -55,7 +67,10 @@ class Register extends Component {
 }
 const RegisterForm = ({ handleChange, handleSubmit, username, password }) => (
   <form onSubmit={e => handleSubmit(e)}>
-    <label htmlFor="username" style={{ color: "rgb(9, 93, 172)" }}>
+    <label
+      htmlFor="username"
+      style={{ color: "rgb(9, 93, 172)", fontSize: "1rem" }}
+    >
       username
     </label>
     <input
@@ -66,7 +81,10 @@ const RegisterForm = ({ handleChange, handleSubmit, username, password }) => (
       autoComplete="off"
       style={{ color: "#ffffff" }}
     />
-    <label htmlFor="password" style={{ color: "rgb(9, 93, 172)" }}>
+    <label
+      htmlFor="password"
+      style={{ color: "rgb(9, 93, 172)", fontSize: "1rem" }}
+    >
       password
     </label>
     <input
@@ -78,9 +96,13 @@ const RegisterForm = ({ handleChange, handleSubmit, username, password }) => (
       style={{ color: "#ffffff" }}
     />{" "}
     <br />
-    <button type="submit" className="btn waves-effect waves-light">
+    <button
+      type="submit"
+      className="btn waves-effect waves-light #ff5722 deep-orange"
+    >
       register
     </button>
+    <Particles params={particleOption} className="particles" />
   </form>
 );
 

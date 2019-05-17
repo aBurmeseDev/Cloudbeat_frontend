@@ -1,7 +1,18 @@
 import React, { Component } from "react";
-
 import { withRouter } from "react-router-dom";
+import Particles from "react-particles-js";
 
+const particleOption = {
+  particles: {
+    number: {
+      value: 200,
+      density: {
+        enable: true,
+        value_area: 1000
+      }
+    }
+  }
+};
 class Login extends Component {
   constructor() {
     super();
@@ -34,7 +45,10 @@ class Login extends Component {
     console.log(this.state);
     return (
       <form onSubmit={this.handleSubmit} className="loginForm">
-        <label htmlFor="username" style={{ color: "rgb(9, 93, 172)" }}>
+        <label
+          htmlFor="username"
+          style={{ color: "rgb(9, 93, 172)", fontSize: "1rem" }}
+        >
           username
         </label>
         <input
@@ -44,7 +58,10 @@ class Login extends Component {
           onChange={this.handleChange}
           style={{ color: "#ffffff" }}
         />
-        <label htmlFor="password" style={{ color: "rgb(9, 93, 172)" }}>
+        <label
+          htmlFor="password"
+          style={{ color: "rgb(9, 93, 172)", fontSize: "1rem" }}
+        >
           password
         </label>
         <input
@@ -58,6 +75,7 @@ class Login extends Component {
         <button type="submit" className="btn waves-effect waves-light">
           Login
         </button>
+        <Particles params={particleOption} className="particles" />
       </form>
     );
   }

@@ -7,23 +7,10 @@ import Search from "./Components/FetchData/FetchData";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import Home from "./Components/Home/Root";
-import "./App.css";
-import "materialize-css/dist/css/materialize.min.css";
-import Particles from "react-particles-js";
 import User from "./Components/Users/Users";
 import Edit from "./Components/EditUser/EditUser";
-
-const particleOption = {
-  particles: {
-    number: {
-      value: 200,
-      density: {
-        enable: true,
-        value_area: 1000
-      }
-    }
-  }
-};
+import "./App.css";
+import "materialize-css/dist/css/materialize.min.css";
 
 class App extends Component {
   state = {
@@ -44,61 +31,65 @@ class App extends Component {
   render() {
     const { currentUser } = this.state;
     return (
-      <div className="nav">
-        <AppNavbar
-          currentUser={this.state.currentUser}
-          doLogoutCurrentUser={this.doLogoutCurrentUser}
-        />
-        <Switch>
-          <Route exact path={routes.ROOT} render={() => <Home />} />
-          <Route
-            exact
-            path={routes.REGISTER}
-            render={() => (
-              <Register
-                currentUser={currentUser}
-                doSetCurrentUser={this.doSetCurrentUser}
-              />
-            )}
+      <div className="nav" style={{ height: "calc(100% - 60px)" }}>
+        <main>
+          <AppNavbar
+            currentUser={this.state.currentUser}
+            doLogoutCurrentUser={this.doLogoutCurrentUser}
           />
-          <Route
-            exact
-            path={routes.SEARCH}
-            render={() => <Search currentUser={this.state.currentUser} />}
-          />
-          <Route
-            exact
-            path={routes.USERS}
-            render={() => <User currentUser={this.state.currentUser} />}
-          />
-          <Route
-            exact
-            path={routes.EDIT}
-            render={() => (
-              <Edit
-                doSetCurrentUser={this.doSetCurrentUser}
-                currentUser={this.state.currentUser}
-                doLogoutCurrentUser={this.doLogoutCurrentUser}
-              />
-            )}
-          />
-          <Route
-            exact
-            path={routes.LOGIN}
-            render={props => (
-              <Login
-                props={props}
-                currentUser={this.state.currentUser}
-                doSetCurrentUser={this.doSetCurrentUser}
-              />
-            )}
-          />
+          <Switch>
+            <Route exact path={routes.ROOT} render={() => <Home />} />
+            <Route
+              exact
+              path={routes.REGISTER}
+              render={() => (
+                <Register
+                  currentUser={currentUser}
+                  doSetCurrentUser={this.doSetCurrentUser}
+                />
+              )}
+            />
+            <Route
+              exact
+              path={routes.SEARCH}
+              render={() => <Search currentUser={this.state.currentUser} />}
+            />
+            <Route
+              exact
+              path={routes.USERS}
+              render={() => <User currentUser={this.state.currentUser} />}
+            />
+            <Route
+              exact
+              path={routes.EDIT}
+              render={() => (
+                <Edit
+                  doSetCurrentUser={this.doSetCurrentUser}
+                  currentUser={this.state.currentUser}
+                  doLogoutCurrentUser={this.doLogoutCurrentUser}
+                />
+              )}
+            />
+            <Route
+              exact
+              path={routes.LOGIN}
+              render={props => (
+                <Login
+                  props={props}
+                  currentUser={this.state.currentUser}
+                  doSetCurrentUser={this.doSetCurrentUser}
+                />
+              )}
+            />
 
-          <Route render={() => <div>NOT FOUND</div>} />
-        </Switch>
-        <Particles params={particleOption} className="particles" />
-
-        <footer class="page-footer">
+            <Route render={() => <div>NOT FOUND</div>} />
+          </Switch>
+          {/* <Particles params={particleOption} className="particles" /> */}
+        </main>
+        <footer
+          class="page-footer"
+          style={{ backgroundColor: "rgba(12, 186, 186, 0.2)" }}
+        >
           <div class="container">
             <div class="row">
               <div class="col l6 s12">

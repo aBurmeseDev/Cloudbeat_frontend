@@ -2,6 +2,19 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Material+Icons", "Kodchasan", sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+h2 {
   font-family: "Kodchasan", sans-serif;
 }
 h4 {
@@ -13,8 +26,6 @@ label {
   display: block;
   text-align: center;
   line-height: 100%;
-  font-size: 0.85em;
-  color: #26a69a;
 }
 input {
   display: block;
@@ -26,8 +37,12 @@ button {
 
   margin: auto !important;
 }
+
 .particles {
   z-index: -10;
   top: 0;
   left: 0;
+}
+.active {
+  background-color: rgb(15, 15, 15) !important;
 }

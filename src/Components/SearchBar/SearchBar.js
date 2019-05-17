@@ -33,7 +33,7 @@ class Search extends Component {
             onClick={() => {
               this.props.search(this.state.query);
             }}
-            className="btn waves-effect waves-light"
+            className="btn waves-effect waves-light cyan pulse"
           >
             Search
           </button>

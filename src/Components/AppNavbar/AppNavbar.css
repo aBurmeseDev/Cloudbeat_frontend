@@ -1,9 +1,10 @@
 .navLink {
   color: rgb(255, 255, 255);
   padding-left: 20rem;
+
+  font-weight: bolder;
 }
 .navDiv {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #7691d1;
 }

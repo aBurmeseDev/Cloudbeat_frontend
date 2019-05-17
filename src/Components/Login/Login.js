@@ -42,6 +42,7 @@ class Login extends Component {
           name="username"
           autoComplete="off"
           onChange={this.handleChange}
+          style={{ color: "#ffffff" }}
         />
         <label htmlFor="password" style={{ color: "rgb(9, 93, 172)" }}>
           password
@@ -51,6 +52,7 @@ class Login extends Component {
           name="password"
           onChange={this.handleChange}
           autoComplete="off"
+          style={{ color: "#ffffff" }}
         />
         <br />
         <button type="submit" className="btn waves-effect waves-light">

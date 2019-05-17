@@ -23,7 +23,8 @@ class Users extends Component {
               key={i}
               style={{
                 display: "inline-block",
-                paddingLeft: "3rem"
+                paddingLeft: "3rem",
+                color: "#ffffff"
               }}
             >
               {" "}

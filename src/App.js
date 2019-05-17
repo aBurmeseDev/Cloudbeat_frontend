@@ -97,6 +97,56 @@ class App extends Component {
           <Route render={() => <div>NOT FOUND</div>} />
         </Switch>
         <Particles params={particleOption} className="particles" />
+
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="grey-text text-lighten-4">
+                  This app is powered by Spotify Web API{" "}
+                  <i class="fab fa-spotify" />
+                </h5>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">About me</h5>
+                <div>
+                  <a
+                    class="grey-text text-lighten-3"
+                    href="https://www.johnlwin.info/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ paddingRight: "1rem" }}
+                  >
+                    <i class="fas fa-user-circle fa-3x" />
+                  </a>
+
+                  <a
+                    class="grey-text text-lighten-3"
+                    href="https://github.com/aBurmeseDev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ paddingRight: "1rem" }}
+                  >
+                    <i class="fab fa-github fa-3x" />
+                  </a>
+
+                  <a
+                    class="grey-text text-lighten-3"
+                    href="https://www.linkedin.com/in/john-lwin/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ paddingRight: "1rem" }}
+                  >
+                    <i class="fab fa-linkedin fa-3x" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">© 2019 Copyright John Lwin</div>
+          </div>
+        </footer>
       </div>
     );
   }

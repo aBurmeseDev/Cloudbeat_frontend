@@ -64,6 +64,7 @@ const RegisterForm = ({ handleChange, handleSubmit, username, password }) => (
       onChange={e => handleChange(e)}
       value={username}
       autoComplete="off"
+      style={{ color: "#ffffff" }}
     />
     <label htmlFor="password" style={{ color: "rgb(9, 93, 172)" }}>
       password
@@ -74,6 +75,7 @@ const RegisterForm = ({ handleChange, handleSubmit, username, password }) => (
       onChange={e => handleChange(e)}
       value={password}
       autoComplete="off"
+      style={{ color: "#ffffff" }}
     />{" "}
     <br />
     <button type="submit" className="btn waves-effect waves-light">

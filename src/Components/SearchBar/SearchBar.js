@@ -26,6 +26,7 @@ class Search extends Component {
             onChange={this.changeHandler}
             autoComplete="off"
             placeholder="cloudbeat"
+            style={{ color: "#ffffff" }}
           />
           <br />
           <button

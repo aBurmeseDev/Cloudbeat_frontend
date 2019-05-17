@@ -17,12 +17,12 @@ const SongsList = props => {
           <span
             style={{
               textAlign: "center",
-              color: "#fffff",
+              color: "#ffffff",
               marginBottom: "2rem"
             }}
           >
-            {t.album.release_date} <br />
-            Popularity:{t.popularity}
+            Release Date: {t.album.release_date} <br />
+            Popularity: {t.popularity}
           </span>
           <br />
           <iframe

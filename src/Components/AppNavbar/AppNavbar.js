@@ -14,30 +14,33 @@ const NavBar = ({ currentUser, doLogoutCurrentUser }) => (
       SEARCH
     </NavLink>
 
-    {currentUser ? (
-      <NavLink onClick={doLogoutCurrentUser} className="navLink">
-        LOGOUT
-      </NavLink>
-    ) : (
-      [
-        <NavLink
-          key={1}
-          to={routes.REGISTER}
-          activeClassName="selected"
-          className="navLink"
-        >
-          REGISTER
-        </NavLink>,
-        <NavLink
-          key={2}
-          to={"/login"}
-          className="navLink"
-          activeClassName="selected"
-        >
-          LOGIN
-        </NavLink>
-      ]
-    )}
+    {currentUser
+      ? [
+          <NavLink to={"/edit"} activeClassName="selected" className="navLink">
+            USER INFO
+          </NavLink>,
+          <NavLink onClick={doLogoutCurrentUser} className="navLink">
+            LOGOUT
+          </NavLink>
+        ]
+      : [
+          <NavLink
+            key={1}
+            to={routes.REGISTER}
+            activeClassName="selected"
+            className="navLink"
+          >
+            REGISTER
+          </NavLink>,
+          <NavLink
+            key={2}
+            to={"/login"}
+            className="navLink"
+            activeClassName="selected"
+          >
+            LOGIN
+          </NavLink>
+        ]}
   </div>
 );
 

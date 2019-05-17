@@ -13,9 +13,7 @@ class Users extends Component {
     });
   }
   render() {
-    console.log(typeof this.state.users);
     const data = this.state.users;
-    console.log(data.users && data.users);
 
     return (
       <div style={{ marginTop: "4rem" }}>
@@ -29,7 +27,7 @@ class Users extends Component {
               }}
             >
               {" "}
-              <i class="fas fa-headphones-alt" />: {user.username}
+              <i className="fas fa-headphones-alt" />: {user.username}
             </h5>
           ))}
       </div>

@@ -11,6 +11,7 @@ import "./App.css";
 import "materialize-css/dist/css/materialize.min.css";
 import Particles from "react-particles-js";
 import User from "./Components/Users/Users";
+import Edit from "./Components/EditUser/EditUser";
 
 const particleOption = {
   particles: {
@@ -70,7 +71,17 @@ class App extends Component {
             path={routes.USERS}
             render={() => <User currentUser={this.state.currentUser} />}
           />
-
+          <Route
+            exact
+            path={routes.EDIT}
+            render={() => (
+              <Edit
+                doSetCurrentUser={this.doSetCurrentUser}
+                currentUser={this.state.currentUser}
+                doLogoutCurrentUser={this.doLogoutCurrentUser}
+              />
+            )}
+          />
           <Route
             exact
             path={routes.LOGIN}

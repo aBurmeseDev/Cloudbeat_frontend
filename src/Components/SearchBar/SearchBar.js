@@ -25,6 +25,7 @@ class Search extends Component {
             value={this.state.query}
             onChange={this.changeHandler}
             autoComplete="off"
+            placeholder="cloudbeat"
           />
           <br />
           <button

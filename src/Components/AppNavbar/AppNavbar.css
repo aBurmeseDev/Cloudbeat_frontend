@@ -3,5 +3,7 @@
   padding-left: 20rem;
 }
 .navDiv {
-  margin-top: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #7691d1;
 }

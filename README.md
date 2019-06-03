@@ -2,6 +2,8 @@
 
 CloudBeat is a music app powered by Spotify Web API 
 
+![Spotify_Logo_RGB_Green](https://user-images.githubusercontent.com/47447266/58818765-7f38a580-85e3-11e9-97e3-e349ef520677.png)
+
 ### App UX
 
 ![landing-page](https://user-images.githubusercontent.com/47447266/57944813-06b8b180-788d-11e9-83e8-a8c440631c40.png)

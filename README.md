@@ -1,6 +1,7 @@
 # CloudBeat
 
-CloudBeat is a music app powered by Spotify Web API 
+CloudBeat is a MERN stack app, powered by Spotify Web API, which allows users to search for their favorite music from Spotify. 
+CloudBeat is built using NodeJS, Express, MongoDB and Mongoose in the server side and React, EJS, React-Materialize for the client side.
 
 ![Spotify_Logo_RGB_Green](https://user-images.githubusercontent.com/47447266/58818765-7f38a580-85e3-11e9-97e3-e349ef520677.png)
 
